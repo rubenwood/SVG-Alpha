@@ -1,0 +1,35 @@
+ <html>
+ <style type="text/css"> 
+	body {
+		background-image:url("cardboard-models.jpg");
+	}
+ </style>
+
+<body>
+	<image width="20%" height="20%" src="ScreenshotColor.jpg" />
+	<image width="20%" height="20%" src="ScreenshotAlpha.jpg" />
+</body>	
+
+ <svg width="80%" height="80%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	 <style type="text/css"> 
+		<![CDATA[ 
+			#Something {
+				mask :url(#mask_main);	
+			} 
+		]]> 
+	 </style>
+	 <symbol id="img_colour"> 
+		<image width="100%" height="100%" xlink:href="ScreenshotColor.jpg" />
+	 </symbol>
+	<symbol id="img_BnW">
+		<image width="100%" height="100%" xlink:href="ScreenshotAlpha.jpg" />
+	</symbol>
+	
+	 <mask id="mask_main">
+		<use xlink:href="#img_BnW" width="100%" height="100%" x="0" y="0" style="overflow:hidden;"/> 
+	 </mask>
+	 
+	 <use id="Something" xlink:href="#img_colour" width="100%" height="100%" style="overflow:hidden;"/> 
+ </svg>
+ 
+</html>

@@ -1,0 +1,33 @@
+ <html>
+ <style type="text/css"> 
+	body {
+		background-image:url("cardboard-models.jpg");
+	}
+ </style>
+
+<body>
+	<!-- Dsiplay image on page -->
+	<image width="20%" height="20%" src="ScreenshotMain.jpg" />
+</body>	
+
+ <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	 <style type="text/css"> 
+		<![CDATA[ 
+			#Something {
+				mask :url(#mask_main);	
+			} 
+		]]> 
+	 </style>
+	 <!-- Create a symbol, use this id when working with image (it's actually not an image anymore its a 'symbol') -->
+	 <symbol id="img_c">
+		<image width="1024" height="400" xlink:href="ScreenshotMain.jpg" />
+	 </symbol>
+	<!-- Create a mask, this mask is what appears on top, so x -512 is what is on the left hand side -->
+	 <mask id="mask_main">
+		<use xlink:href="#img_c" width="1024" height="400" x="-512" y="0" style="overflow:hidden;"/> 
+	 </mask>
+	 <!-- Apply the mask using id specified in CSS, specify symbol that is being masked, set width to half total width of origianl image -->
+	 <use id="Something" xlink:href="#img_c" width="512" height="400" style="overflow:hidden;"/>
+ </svg>
+ 
+</html>
